@@ -3,6 +3,7 @@ return {
 	lazy = false,
 	---enables autocomplete for opts
 	---@module "auto-session"
+	---@diagnostic disable-next-line: undefined-doc-name
 	---@type AutoSession.Config
 	opts = {
 		suppressed_dirs = { "~/", "~/projects", "~/Downloads", "/" },
@@ -16,6 +17,7 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>ss", "<cmd>SessionSearch<CR>", desc = "Search session" }
+		{ "<leader>ss", "<cmd>SessionSearch<CR>", desc = "Search session" },
+		{ "<leader>sd", "<cmd>SessionDelete<CR>", desc = "Delete session" },
 	},
 }
