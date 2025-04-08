@@ -1,7 +1,19 @@
 return {
 	{
 		"folke/ts-comments.nvim",
-		opts = {},
+		opts = {
+			signs = true,
+			sign_priority = 8,
+			keywords = {
+				FIX = { icon = " ", color = "error" },
+				TODO = { icon = " ", color = "info" },
+				HACK = { icon = " ", color = "warning" },
+				WARN = { icon = " ", color = "warning" },
+				PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" }, color = "hint" },
+				NOTE = { icon = " ", color = "hint" },
+				TEST = { icon = "⏲️ ", color = "#9fbb58" },
+			},
+		},
 		event = "VeryLazy",
 		enabled = vim.fn.has("nvim-0.10.0") == 1,
 	},
@@ -24,5 +36,17 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		config = true,
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		event = "VeryLazy",
+		opts = {
+			user_default_options = {
+				css = true,
+				mode = "background",
+				tailwind = true,
+			},
+			buftypes = { "*", "!nofile", "!nowrite", "!help" },
+		},
 	},
 }
